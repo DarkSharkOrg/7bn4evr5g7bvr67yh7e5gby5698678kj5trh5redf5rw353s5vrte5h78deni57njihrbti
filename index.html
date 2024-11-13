@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphanumeric Code Generator</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #0d0d0d;
+            color: #00ff99;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #00ff99;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #00ff99, 0 0 50px #00ff99;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+        }
+        .code {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #121212;
+            background-color: #00ff99;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #00ff99;
+            opacity: 0.8;
+            text-shadow: 0 0 5px #00ff99;
+        }
+        .footer a {
+            color: #00ff99;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Alphanumeric Code Generator</div>
+        <div class="code" id="giftCode">XXXXXXXXXXXXXXX</div>
+        <button class="button" onclick="generateCode()">Generate New Code</button>
+    </div>
+    
+    <div class="footer">
+        Made with ❤️ by <a href="https://t.me/VOTREX_69" target="_blank">@VOTREX_69</a>
+    </div>
+
+    <script>
+        function generateCode() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let code = '';
+            for (let i = 0; i < 16; i++) {
+                code += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            document.getElementById('giftCode').innerText = code;
+        }
+    </script>
+</body>
+</html>
