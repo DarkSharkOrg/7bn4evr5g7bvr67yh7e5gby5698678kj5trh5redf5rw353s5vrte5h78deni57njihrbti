@@ -18,53 +18,71 @@
             align-items: center;
             min-height: 100vh;
             background-color: #0d0d0d;
-            color: #00ff99;
+            color: #ff4d4d;
             font-family: Arial, sans-serif;
         }
         .container {
             text-align: center;
             padding: 20px;
-            border: 2px solid #00ff99;
+            border: 2px solid #ff4d4d;
             border-radius: 8px;
-            box-shadow: 0 0 15px #00ff99, 0 0 50px #00ff99;
+            box-shadow: 0 0 15px #ff4d4d, 0 0 50px #ff4d4d;
         }
         .title {
             font-size: 28px;
             font-weight: bold;
             margin-bottom: 15px;
-            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+            text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d;
         }
         .code {
             font-size: 24px;
             font-weight: bold;
             margin: 20px 0;
             color: #ffffff;
-            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+            text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d;
         }
         .button {
             padding: 10px 20px;
             font-size: 18px;
             font-weight: bold;
             color: #121212;
-            background-color: #00ff99;
+            background-color: #ff4d4d;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: transform 0.2s;
+            margin: 5px;
         }
         .button:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+            box-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d;
         }
         .footer {
             margin-top: 40px;
             font-size: 14px;
-            color: #00ff99;
+            color: #ff4d4d;
             opacity: 0.8;
-            text-shadow: 0 0 5px #00ff99;
+            text-shadow: 0 0 5px #ff4d4d;
         }
         .footer a {
-            color: #00ff99;
+            color: #ff4d4d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #supportMessage {
+            display: none;
+            color: #ffffff;
+            background-color: #0d0d0d;
+            border: 2px solid #ff4d4d;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ff4d4d;
+            text-align: center;
+            margin-top: 20px;
+            max-width: 400px;
+        }
+        #supportMessage a {
+            color: #ff4d4d;
             text-decoration: none;
             font-weight: bold;
         }
@@ -75,10 +93,17 @@
         <div class="title">Alphanumeric Code Generator</div>
         <div class="code" id="giftCode">XXXXXXXXXXXXXXX</div>
         <button class="button" onclick="generateCode()">Generate New Code</button>
+        <button class="button" onclick="showSupportMessage()">Support Us</button>
     </div>
     
     <div class="footer">
         Made with ❤️ by <a href="https://t.me/VOTREX_69" target="_blank">@VOTREX_69</a>
+    </div>
+
+    <div id="supportMessage">
+        <p>We Give Free Mods & Free Web Tools To Make Profit. Support Us Using Our Link:</p>
+        <p><a href="https://rajaluck.work/#/register?invitationCode=Tovuc85622" target="_blank">Make an account on Rajaluck Game</a> and deposit into that account.</p>
+        <p>After that, send us your UID at <a href="https://t.me/VOTREX_69" target="_blank">our Telegram</a>, and we will provide you with the free hack of Rajaluck.</p>
     </div>
 
     <script>
@@ -89,6 +114,11 @@
                 code += characters.charAt(Math.floor(Math.random() * characters.length));
             }
             document.getElementById('giftCode').innerText = code;
+        }
+
+        function showSupportMessage() {
+            const supportMessage = document.getElementById('supportMessage');
+            supportMessage.style.display = supportMessage.style.display === 'none' ? 'block' : 'none';
         }
     </script>
 </body>
